@@ -1,0 +1,1701 @@
+```html
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .gradient-bg {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        animation: gradientShift 12s ease-in-out infinite;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .gradient-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 20% 80%, rgba(255, 154, 158, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(74, 172, 254, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(255, 206, 84, 0.2) 0%, transparent 50%);
+        animation: auraShift 15s ease-in-out infinite;
+        pointer-events: none;
+    }
+    
+    @keyframes gradientShift {
+        0%, 100% { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        16% { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); } /* Sunset blush */
+        33% { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); } /* Electric blue */
+        50% { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); } /* Mellow gold */
+        66% { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); } /* Dreamy pink */
+        83% { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); } /* Fresh mint */
+    }
+    
+    @keyframes auraShift {
+        0%, 100% { opacity: 0.6; transform: scale(1) rotate(0deg); }
+        33% { opacity: 0.8; transform: scale(1.1) rotate(120deg); }
+        66% { opacity: 0.4; transform: scale(0.9) rotate(240deg); }
+    }
+    
+    .vibe-card {
+        backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .vibe-card:hover {
+        transform: translateY(-8px) scale(1.02);
+        backdrop-filter: blur(30px);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+    
+    .crushed-it { background: linear-gradient(135deg, #ff6b6b 0%, #ffa726 100%); }
+    .soft-joy { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+    .blur-day { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+    .electric-feels { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .golden-hour { background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%); }
+    .midnight-thoughts { background: linear-gradient(135deg, #2c3e50 0%, #4a6741 100%); }
+    .custom-mood { background: linear-gradient(135deg, #fd79a8 0%, #fdcb6e 100%); }
+    
+    .floating-emoji {
+        animation: float 3s ease-in-out infinite;
+        position: relative;
+    }
+    
+    .floating-emoji::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: glowPulse 2s ease-in-out infinite;
+        pointer-events: none;
+    }
+    
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(5deg); }
+    }
+    
+    @keyframes glowPulse {
+        0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+        50% { opacity: 0.6; transform: translate(-50%, -50%) scale(1.2); }
+    }
+    
+    .pulse-ring {
+        animation: pulseRing 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+        position: relative;
+    }
+    
+    .pulse-ring::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        animation: rippleEffect 3s ease-out infinite;
+    }
+    
+    @keyframes pulseRing {
+        0% { transform: scale(0.8); opacity: 1; }
+        80%, 100% { transform: scale(1.2); opacity: 0; }
+    }
+    
+    @keyframes rippleEffect {
+        0% { transform: scale(0.8); opacity: 0.8; }
+        50% { transform: scale(1.5); opacity: 0.3; }
+        100% { transform: scale(2.2); opacity: 0; }
+    }
+    
+    .liquid-transition {
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+    
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .timeline-container {
+        scroll-behavior: smooth;
+    }
+    
+    .vibe-filter {
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .vibe-filter.active {
+        background: rgba(255, 255, 255, 0.3);
+        transform: scale(1.05);
+    }
+    
+    .modal-backdrop {
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.3);
+    }
+    
+    .music-visualizer {
+        display: flex;
+        align-items: end;
+        height: 30px;
+        gap: 2px;
+    }
+    
+    .bar {
+        width: 3px;
+        background: currentColor;
+        border-radius: 2px;
+        animation: musicBar 1.5s ease-in-out infinite;
+    }
+    
+    .bar:nth-child(1) { animation-delay: 0s; }
+    .bar:nth-child(2) { animation-delay: 0.1s; }
+    .bar:nth-child(3) { animation-delay: 0.2s; }
+    .bar:nth-child(4) { animation-delay: 0.3s; }
+    .bar:nth-child(5) { animation-delay: 0.4s; }
+    
+    @keyframes musicBar {
+        0%, 100% { height: 5px; }
+        50% { height: 25px; }
+    }
+</style>
+    <!-- Creative Challenges Section -->
+    <div class="max-w-6xl mx-auto px-6 py-4">
+        <!-- Main Challenge -->
+        <div class="bg-gradient-to-r from-purple-500 to-pink-600 rounded-2xl p-4 mb-4 relative overflow-hidden">
+            <div class="absolute inset-0 bg-white bg-opacity-10 backdrop-filter backdrop-blur-sm"></div>
+            <div class="relative flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-2xl floating-emoji">
+                        🎨
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold">Weekly Creative Challenge</h3>
+                        <p class="text-white text-opacity-90 text-sm">"Snap a feeling you've never posted" - Express the unexpressed</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <div class="text-white text-opacity-70 text-sm">
+                        <span class="font-bold">1.2k</span> joined
+                    </div>
+                    <button onclick="joinChallenge('creative')" class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-full text-sm font-medium hover:bg-opacity-30 transition-all">
+                        Join Challenge
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mini Challenges Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-gradient-to-r from-cyan-400 to-blue-500 rounded-xl p-3 relative overflow-hidden">
+                <div class="absolute inset-0 bg-white bg-opacity-10"></div>
+                <div class="relative flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <div class="text-xl">🌈</div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">Color Your Chaos</h4>
+                            <p class="text-white text-opacity-80 text-xs">Turn messy moments into art</p>
+                        </div>
+                    </div>
+                    <button onclick="joinChallenge('chaos')" class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-xs hover:bg-opacity-30 transition-all">
+                        Join
+                    </button>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-green-400 to-emerald-500 rounded-xl p-3 relative overflow-hidden">
+                <div class="absolute inset-0 bg-white bg-opacity-10"></div>
+                <div class="relative flex items-center justify-between">
+                    <div class="flex items-center space-x-2">
+                        <div class="text-xl">🌙</div>
+                        <div>
+                            <h4 class="text-white font-semibold text-sm">3AM Thoughts</h4>
+                            <p class="text-white text-opacity-80 text-xs">Late night vulnerability</p>
+                        </div>
+                    </div>
+                    <button onclick="joinChallenge('3am')" class="bg-white bg-opacity-20 text-white px-3 py-1 rounded-full text-xs hover:bg-opacity-30 transition-all">
+                        Join
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Streak & Profile Stats with Magic Effects -->
+    <div class="max-w-6xl mx-auto px-6 pb-4">
+        <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-2xl p-4 border border-white border-opacity-20 relative overflow-hidden">
+            <!-- Streak Aura Effect -->
+            <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 opacity-20 animate-pulse"></div>
+            <div class="relative z-10">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-6">
+                        <div class="text-center relative">
+                            <!-- Animated Avatar with Streak Glow -->
+                            <div class="relative mb-2">
+                                <div class="w-16 h-16 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-2xl animate-pulse">
+                                    ✨
+                                </div>
+                                <div class="absolute -inset-2 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full opacity-30 animate-ping"></div>
+                            </div>
+                            <div class="text-2xl font-bold text-white">7</div>
+                            <div class="text-yellow-300 text-sm font-medium">Fire Streak! 🔥</div>
+                            <div class="flex space-x-1 mt-1 justify-center">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.2s;"></div>
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style="animation-delay: 0.4s;"></div>
+                                <div class="w-2 h-2 bg-white bg-opacity-30 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">12</div>
+                            <div class="text-white text-opacity-70 text-sm">Remixes</div>
+                            <div class="text-purple-300 text-xs">🔄 Remix Master</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-white">89</div>
+                            <div class="text-white text-opacity-70 text-sm">Vibe Score</div>
+                            <div class="text-pink-300 text-xs">✨ Rising Star</div>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-white text-opacity-70 text-sm mb-1">Streak Rewards Unlocked</div>
+                        <div class="space-y-1">
+                            <div class="flex items-center space-x-2 text-sm">
+                                <div class="text-lg">🌟</div>
+                                <div class="text-yellow-300">Profile Aura Glow</div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm">
+                                <div class="text-lg">🎨</div>
+                                <div class="text-purple-300">Exclusive Filters</div>
+                            </div>
+                            <div class="flex items-center space-x-2 text-sm">
+                                <div class="text-lg">👑</div>
+                                <div class="text-orange-300">VIP Badge</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mood Lanes (Swipeable) -->
+    <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="relative">
+            <div class="mood-lanes-container overflow-hidden">
+                <div class="mood-lanes flex space-x-3 transition-transform duration-500 ease-out" id="moodLanes">
+                    <button onclick="filterVibes('all')" class="vibe-filter active px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-all">
+                        <span class="mr-2">✨</span>AuraFeed
+                    </button>
+                    <button onclick="filterVibes('moodmesh')" class="vibe-filter px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-moodmesh">
+                        🌐 MoodMesh
+                    </button>
+                    <button onclick="filterVibes('trending')" class="vibe-filter px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-trending">
+                        🔥 MoodReel
+                    </button>
+                    <button onclick="filterVibes('collab')" class="vibe-filter px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-collab">
+                        🤝 Collab Chains
+                    </button>
+                    <button onclick="filterVibes('cinematic')" class="vibe-filter px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-cinematic">
+                        🎬 Cinematic
+                    </button>
+                    <button onclick="filterVibes('remixes')" class="vibe-filter px-6 py-3 rounded-full text-white font-medium whitespace-nowrap liquid-transition flex-shrink-0" id="filter-remixes">
+                        🔄 MoodChain
+                    </button>
+                </div>
+            </div>
+            <!-- Swipe indicators -->
+            <div class="flex justify-center mt-3 space-x-2">
+                <div class="swipe-dot w-2 h-2 rounded-full bg-white bg-opacity-30 transition-all duration-300" data-index="0"></div>
+                <div class="swipe-dot w-2 h-2 rounded-full bg-white bg-opacity-30 transition-all duration-300" data-index="1"></div>
+                <div class="swipe-dot w-2 h-2 rounded-full bg-white bg-opacity-30 transition-all duration-300" data-index="2"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mood Snapshot Timeline -->
+<div class="max-w-5xl mx-auto px-6 pb-8">
+    <!-- Timeline Header -->
+    <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-white mb-2">Your Mood Timeline</h2>
+        <p class="text-white text-opacity-70">Every moment, every feeling, beautifully captured</p>
+    </div>
+    
+    <!-- Scrollable Timeline Container -->
+    <div class="timeline-container max-h-screen overflow-y-auto scrollbar-hide relative" style="max-height: calc(100vh - 350px);">
+        <!-- Timeline Line -->
+        <div class="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-pink-400 via-purple-500 to-blue-500 opacity-30 rounded-full"></div>
+        
+        <div id="vibeTimeline" class="space-y-8 pb-20 relative">
+            
+            <!-- Mood Snapshot 1: High Energy -->
+            <div class="mood-snapshot flex items-start space-x-6 group" data-mood="high-energy" data-vibe="cinematic">
+                <!-- Timeline Dot -->
+                <div class="relative z-10 flex-shrink-0">
+                    <div class="w-6 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded-full border-4 border-white shadow-lg pulse-ring"></div>
+                    <div class="absolute -inset-2 bg-orange-400 rounded-full opacity-20 animate-ping"></div>
+                </div>
+                
+                <!-- Snapshot Card -->
+                <div class="mood-card bg-gradient-to-br from-orange-400 to-red-500 rounded-3xl p-6 flex-1 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
+                    <!-- Energy Particles -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute top-4 left-4 w-2 h-2 bg-yellow-300 rounded-full animate-bounce"></div>
+                        <div class="absolute top-8 right-8 w-1 h-1 bg-white rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-6 left-12 w-1.5 h-1.5 bg-yellow-200 rounded-full animate-ping"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <!-- Mood Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl floating-emoji backdrop-blur-sm">
+                                    💪
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">Crushed It!</h3>
+                                    <p class="text-white text-opacity-80 text-sm">2 hours ago • High Energy</p>
+                                </div>
+                            </div>
+                            <div class="energy-meter flex flex-col items-center">
+                                <div class="text-white text-xs mb-1">Energy</div>
+                                <div class="w-2 h-12 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                    <div class="w-full h-4/5 bg-gradient-to-t from-yellow-300 to-white rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mood Visualization -->
+                        <div class="mb-4 p-4 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white text-sm font-medium">Mood Intensity</span>
+                                <span class="text-white text-sm">95%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-yellow-300 to-white rounded-full animate-pulse" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Snapshot Content -->
+                        <div class="mb-4 p-4 bg-black bg-opacity-20 rounded-2xl">
+                            <p class="text-white text-lg leading-relaxed">Just absolutely demolished that presentation! The adrenaline is still pumping - I feel like I could conquer the world right now! 🚀✨</p>
+                        </div>
+                        
+                        <!-- Mood Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-400 bg-opacity-30 rounded-full text-white text-sm font-medium">Victory</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">Confidence</span>
+                            <span class="px-3 py-1 bg-orange-300 bg-opacity-30 rounded-full text-white text-sm">Unstoppable</span>
+                        </div>
+                        
+                        <!-- Interaction Bar -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white border-opacity-20">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="likeSnapshot(this)" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition-colors">
+                                    <span class="heart text-lg">🤍</span>
+                                    <span class="like-count">24</span>
+                                </button>
+                                <button onclick="customizeSnapshot(this, 'high-energy')" class="flex items-center space-x-2 text-white hover:text-pink-300 transition-colors">
+                                    <span>🎨</span>
+                                    <span>Customize</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="shareSnapshot('Crushed It!')" class="text-white hover:text-blue-300 transition-colors">
+                                    📤
+                                </button>
+                                <button onclick="remixSnapshot('Crushed It!', 'high-energy', '💪')" class="text-white hover:text-purple-300 transition-colors">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Snapshot 2: Peaceful -->
+            <div class="mood-snapshot flex items-start space-x-6 group" data-mood="peaceful" data-vibe="moodmesh">
+                <!-- Timeline Dot -->
+                <div class="relative z-10 flex-shrink-0">
+                    <div class="w-6 h-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-full border-4 border-white shadow-lg"></div>
+                    <div class="absolute -inset-2 bg-green-400 rounded-full opacity-20 animate-pulse"></div>
+                </div>
+                
+                <!-- Snapshot Card -->
+                <div class="mood-card bg-gradient-to-br from-green-400 to-blue-500 rounded-3xl p-6 flex-1 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
+                    <!-- Peaceful Particles -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute top-6 right-6 w-1 h-1 bg-white rounded-full animate-pulse opacity-60"></div>
+                        <div class="absolute bottom-8 left-8 w-1.5 h-1.5 bg-cyan-200 rounded-full animate-pulse opacity-40" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 right-12 w-1 h-1 bg-green-200 rounded-full animate-pulse opacity-50" style="animation-delay: 2s;"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <!-- Mood Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl floating-emoji backdrop-blur-sm">
+                                    🧘‍♀️
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">Inner Peace</h3>
+                                    <p class="text-white text-opacity-80 text-sm">5 hours ago • Peaceful</p>
+                                </div>
+                            </div>
+                            <div class="energy-meter flex flex-col items-center">
+                                <div class="text-white text-xs mb-1">Calm</div>
+                                <div class="w-2 h-12 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                    <div class="w-full h-3/5 bg-gradient-to-t from-green-300 to-cyan-200 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mood Visualization -->
+                        <div class="mb-4 p-4 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white text-sm font-medium">Serenity Level</span>
+                                <span class="text-white text-sm">78%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-green-300 to-cyan-200 rounded-full" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Snapshot Content -->
+                        <div class="mb-4 p-4 bg-black bg-opacity-20 rounded-2xl">
+                            <p class="text-white text-lg leading-relaxed">Morning meditation by the window. The world feels softer today, like everything is exactly where it needs to be. Pure tranquility 🌿✨</p>
+                        </div>
+                        
+                        <!-- Mood Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-green-400 bg-opacity-30 rounded-full text-white text-sm font-medium">Zen</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">Mindful</span>
+                            <span class="px-3 py-1 bg-cyan-300 bg-opacity-30 rounded-full text-white text-sm">Centered</span>
+                        </div>
+                        
+                        <!-- Interaction Bar -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white border-opacity-20">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="likeSnapshot(this)" class="flex items-center space-x-2 text-white hover:text-green-300 transition-colors">
+                                    <span class="heart text-lg">🤍</span>
+                                    <span class="like-count">18</span>
+                                </button>
+                                <button onclick="customizeSnapshot(this, 'peaceful')" class="flex items-center space-x-2 text-white hover:text-pink-300 transition-colors">
+                                    <span>🎨</span>
+                                    <span>Customize</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="shareSnapshot('Inner Peace')" class="text-white hover:text-blue-300 transition-colors">
+                                    📤
+                                </button>
+                                <button onclick="remixSnapshot('Inner Peace', 'peaceful', '🧘‍♀️')" class="text-white hover:text-purple-300 transition-colors">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Snapshot 3: Creative Flow -->
+            <div class="mood-snapshot flex items-start space-x-6 group" data-mood="creative" data-vibe="trending">
+                <!-- Timeline Dot -->
+                <div class="relative z-10 flex-shrink-0">
+                    <div class="w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full border-4 border-white shadow-lg pulse-ring"></div>
+                    <div class="absolute -inset-2 bg-purple-400 rounded-full opacity-20 animate-ping"></div>
+                </div>
+                
+                <!-- Snapshot Card -->
+                <div class="mood-card bg-gradient-to-br from-purple-400 to-pink-500 rounded-3xl p-6 flex-1 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
+                    <!-- Creative Particles -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute top-4 left-6 w-2 h-2 bg-yellow-300 rounded-full animate-bounce" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute top-12 right-4 w-1.5 h-1.5 bg-cyan-300 rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-4 right-8 w-1 h-1 bg-white rounded-full animate-ping" style="animation-delay: 1.5s;"></div>
+                        <div class="absolute bottom-12 left-4 w-1.5 h-1.5 bg-pink-200 rounded-full animate-bounce" style="animation-delay: 2s;"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <!-- Mood Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl floating-emoji backdrop-blur-sm">
+                                    🎨
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">Creative Flow</h3>
+                                    <p class="text-white text-opacity-80 text-sm">1 day ago • Inspired</p>
+                                </div>
+                            </div>
+                            <div class="energy-meter flex flex-col items-center">
+                                <div class="text-white text-xs mb-1">Flow</div>
+                                <div class="w-2 h-12 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                    <div class="w-full h-5/6 bg-gradient-to-t from-purple-300 to-pink-200 rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mood Visualization -->
+                        <div class="mb-4 p-4 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white text-sm font-medium">Inspiration Level</span>
+                                <span class="text-white text-sm">92%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-purple-300 to-pink-300 rounded-full animate-pulse" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Snapshot Content -->
+                        <div class="mb-4 p-4 bg-black bg-opacity-20 rounded-2xl">
+                            <p class="text-white text-lg leading-relaxed">In the zone tonight! Ideas flowing like water, colors dancing in my mind. This is what pure creative energy feels like 🌈⚡</p>
+                        </div>
+                        
+                        <!-- Mood Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-purple-400 bg-opacity-30 rounded-full text-white text-sm font-medium">Flow State</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">Inspired</span>
+                            <span class="px-3 py-1 bg-pink-300 bg-opacity-30 rounded-full text-white text-sm">Artistic</span>
+                        </div>
+                        
+                        <!-- Interaction Bar -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white border-opacity-20">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="likeSnapshot(this)" class="flex items-center space-x-2 text-white hover:text-purple-300 transition-colors">
+                                    <span class="heart text-lg">🤍</span>
+                                    <span class="like-count">31</span>
+                                </button>
+                                <button onclick="customizeSnapshot(this, 'creative')" class="flex items-center space-x-2 text-white hover:text-pink-300 transition-colors">
+                                    <span>🎨</span>
+                                    <span>Customize</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="shareSnapshot('Creative Flow')" class="text-white hover:text-blue-300 transition-colors">
+                                    📤
+                                </button>
+                                <button onclick="remixSnapshot('Creative Flow', 'creative', '🎨')" class="text-white hover:text-purple-300 transition-colors">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Snapshot 4: Melancholy -->
+            <div class="mood-snapshot flex items-start space-x-6 group" data-mood="melancholy" data-vibe="collab">
+                <!-- Timeline Dot -->
+                <div class="relative z-10 flex-shrink-0">
+                    <div class="w-6 h-6 bg-gradient-to-r from-indigo-400 to-gray-500 rounded-full border-4 border-white shadow-lg"></div>
+                    <div class="absolute -inset-2 bg-indigo-400 rounded-full opacity-20 animate-pulse"></div>
+                </div>
+                
+                <!-- Snapshot Card -->
+                <div class="mood-card bg-gradient-to-br from-indigo-400 to-gray-600 rounded-3xl p-6 flex-1 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
+                    <!-- Melancholy Particles -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute top-8 left-8 w-1 h-1 bg-blue-200 rounded-full animate-pulse opacity-40"></div>
+                        <div class="absolute bottom-6 right-6 w-1.5 h-1.5 bg-indigo-200 rounded-full animate-pulse opacity-30" style="animation-delay: 3s;"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <!-- Mood Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl floating-emoji backdrop-blur-sm">
+                                    🌧️
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">Rainy Thoughts</h3>
+                                    <p class="text-white text-opacity-80 text-sm">2 days ago • Reflective</p>
+                                </div>
+                            </div>
+                            <div class="energy-meter flex flex-col items-center">
+                                <div class="text-white text-xs mb-1">Depth</div>
+                                <div class="w-2 h-12 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                    <div class="w-full h-2/3 bg-gradient-to-t from-indigo-300 to-gray-300 rounded-full"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mood Visualization -->
+                        <div class="mb-4 p-4 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white text-sm font-medium">Contemplation</span>
+                                <span class="text-white text-sm">68%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-indigo-300 to-gray-400 rounded-full" style="width: 68%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Snapshot Content -->
+                        <div class="mb-4 p-4 bg-black bg-opacity-20 rounded-2xl">
+                            <p class="text-white text-lg leading-relaxed">Sometimes the rain outside matches the weather in your soul. Not sad, just... thoughtful. These quiet moments teach us so much 🌧️💭</p>
+                        </div>
+                        
+                        <!-- Mood Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-indigo-400 bg-opacity-30 rounded-full text-white text-sm font-medium">Contemplative</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">Introspective</span>
+                            <span class="px-3 py-1 bg-gray-400 bg-opacity-30 rounded-full text-white text-sm">Peaceful</span>
+                        </div>
+                        
+                        <!-- Interaction Bar -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white border-opacity-20">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="likeSnapshot(this)" class="flex items-center space-x-2 text-white hover:text-indigo-300 transition-colors">
+                                    <span class="heart text-lg">🤍</span>
+                                    <span class="like-count">15</span>
+                                </button>
+                                <button onclick="customizeSnapshot(this, 'melancholy')" class="flex items-center space-x-2 text-white hover:text-pink-300 transition-colors">
+                                    <span>🎨</span>
+                                    <span>Customize</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="shareSnapshot('Rainy Thoughts')" class="text-white hover:text-blue-300 transition-colors">
+                                    📤
+                                </button>
+                                <button onclick="remixSnapshot('Rainy Thoughts', 'melancholy', '🌧️')" class="text-white hover:text-purple-300 transition-colors">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mood Snapshot 5: Euphoric -->
+            <div class="mood-snapshot flex items-start space-x-6 group" data-mood="euphoric" data-vibe="remixes">
+                <!-- Timeline Dot -->
+                <div class="relative z-10 flex-shrink-0">
+                    <div class="w-6 h-6 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full border-4 border-white shadow-lg pulse-ring"></div>
+                    <div class="absolute -inset-2 bg-yellow-400 rounded-full opacity-20 animate-ping"></div>
+                </div>
+                
+                <!-- Snapshot Card -->
+                <div class="mood-card bg-gradient-to-br from-yellow-400 to-pink-500 rounded-3xl p-6 flex-1 transform transition-all duration-500 hover:scale-105 hover:shadow-2xl relative overflow-hidden">
+                    <!-- Euphoric Particles -->
+                    <div class="absolute inset-0 overflow-hidden">
+                        <div class="absolute top-2 left-4 w-3 h-3 bg-white rounded-full animate-bounce opacity-70"></div>
+                        <div class="absolute top-6 right-6 w-2 h-2 bg-yellow-200 rounded-full animate-pulse"></div>
+                        <div class="absolute bottom-4 left-8 w-2.5 h-2.5 bg-pink-200 rounded-full animate-bounce" style="animation-delay: 0.3s;"></div>
+                        <div class="absolute bottom-8 right-4 w-1.5 h-1.5 bg-white rounded-full animate-ping" style="animation-delay: 1s;"></div>
+                        <div class="absolute top-1/2 left-1/2 w-1 h-1 bg-orange-200 rounded-full animate-pulse" style="animation-delay: 2s;"></div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <!-- Mood Header -->
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center text-3xl floating-emoji backdrop-blur-sm">
+                                    🌟
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-bold text-white">Pure Bliss</h3>
+                                    <p class="text-white text-opacity-80 text-sm">3 days ago • Euphoric</p>
+                                </div>
+                            </div>
+                            <div class="energy-meter flex flex-col items-center">
+                                <div class="text-white text-xs mb-1">Joy</div>
+                                <div class="w-2 h-12 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                    <div class="w-full h-full bg-gradient-to-t from-yellow-300 to-white rounded-full animate-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Mood Visualization -->
+                        <div class="mb-4 p-4 bg-white bg-opacity-10 rounded-2xl backdrop-blur-sm border border-white border-opacity-20">
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-white text-sm font-medium">Happiness Level</span>
+                                <span class="text-white text-sm">100%</span>
+                            </div>
+                            <div class="w-full h-2 bg-white bg-opacity-20 rounded-full overflow-hidden">
+                                <div class="h-full bg-gradient-to-r from-yellow-300 to-pink-300 rounded-full animate-pulse" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Snapshot Content -->
+                        <div class="mb-4 p-4 bg-black bg-opacity-20 rounded-2xl">
+                            <p class="text-white text-lg leading-relaxed">Life is absolutely magical right now! Everything feels possible, every breath is a celebration. This is what pure joy feels like! ✨🎉</p>
+                        </div>
+                        
+                        <!-- Mood Tags -->
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-yellow-400 bg-opacity-30 rounded-full text-white text-sm font-medium">Euphoric</span>
+                            <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">Grateful</span>
+                            <span class="px-3 py-1 bg-pink-300 bg-opacity-30 rounded-full text-white text-sm">Radiant</span>
+                        </div>
+                        
+                        <!-- Interaction Bar -->
+                        <div class="flex items-center justify-between pt-4 border-t border-white border-opacity-20">
+                            <div class="flex items-center space-x-4">
+                                <button onclick="likeSnapshot(this)" class="flex items-center space-x-2 text-white hover:text-yellow-300 transition-colors">
+                                    <span class="heart text-lg">🤍</span>
+                                    <span class="like-count">42</span>
+                                </button>
+                                <button onclick="customizeSnapshot(this, 'euphoric')" class="flex items-center space-x-2 text-white hover:text-pink-300 transition-colors">
+                                    <span>🎨</span>
+                                    <span>Customize</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button onclick="shareSnapshot('Pure Bliss')" class="text-white hover:text-blue-300 transition-colors">
+                                    📤
+                                </button>
+                                <button onclick="remixSnapshot('Pure Bliss', 'euphoric', '🌟')" class="text-white hover:text-purple-300 transition-colors">
+                                    🔄
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Remix Modal -->
+<div id="remixModal" class="fixed inset-0 modal-backdrop hidden flex items-center justify-center z-50">
+    <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-md w-full mx-4 border border-white border-opacity-20">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-white">Remix This Vibe</h2>
+            <button onclick="closeRemixModal()" class="text-white text-opacity-70 hover:text-white text-2xl">&times;</button>
+        </div>
+        
+        <div class="mb-6 p-4 bg-white bg-opacity-10 rounded-2xl border border-white border-opacity-20">
+            <div class="flex items-center space-x-3 mb-2">
+                <div id="originalEmoji" class="text-2xl">😍</div>
+                <div>
+                    <div id="originalTitle" class="text-white font-semibold">Original Vibe</div>
+                    <div class="text-white text-opacity-70 text-sm">Remixing from @user</div>
+                </div>
+            </div>
+        </div>
+        
+        <form onsubmit="submitRemix(event)" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-white mb-3">Your remix mood</label>
+                <div class="grid grid-cols-3 gap-3">
+                    <button type="button" onclick="selectRemixMood('euphoric', '😍')" class="remix-mood-btn euphoric p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">😍</div>
+                        <div class="text-xs text-white">Euphoric</div>
+                    </button>
+                    <button type="button" onclick="selectRemixMood('reflective', '🧘‍♀️')" class="remix-mood-btn reflective p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🧘‍♀️</div>
+                        <div class="text-xs text-white">Reflective</div>
+                    </button>
+                    <button type="button" onclick="selectRemixMood('bold', '🔥')" class="remix-mood-btn bold p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🔥</div>
+                        <div class="text-xs text-white">Bold</div>
+                    </button>
+                    <button type="button" onclick="selectRemixMood('chill', '😎')" class="remix-mood-btn chill p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">😎</div>
+                        <div class="text-xs text-white">Chill</div>
+                    </button>
+                    <button type="button" onclick="selectRemixMood('creative', '🎨')" class="remix-mood-btn creative p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🎨</div>
+                        <div class="text-xs text-white">Creative</div>
+                    </button>
+                    <button type="button" onclick="selectRemixMood('energetic', '⚡')" class="remix-mood-btn energetic p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">⚡</div>
+                        <div class="text-xs text-white">Energetic</div>
+                    </button>
+                </div>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-white mb-2">Your remix title</label>
+                <input type="text" id="remixTitle" required class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white placeholder-white placeholder-opacity-50 focus:ring-2 focus:ring-purple-400 focus:border-transparent backdrop-filter backdrop-blur-sm">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-white mb-2">Your take on it</label>
+                <textarea id="remixDescription" required rows="3" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white placeholder-white placeholder-opacity-50 focus:ring-2 focus:ring-purple-400 focus:border-transparent backdrop-filter backdrop-blur-sm"></textarea>
+            </div>
+            
+            <div class="flex space-x-3 pt-4">
+                <button type="button" onclick="closeRemixModal()" class="flex-1 px-6 py-3 bg-white bg-opacity-10 text-white rounded-xl hover:bg-opacity-20 transition-all backdrop-filter backdrop-blur-sm">
+                    Cancel
+                </button>
+                <button type="submit" class="flex-1 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-xl hover:from-purple-600 hover:to-pink-700 transition-all font-medium">
+                    Share Remix
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- MoodSnap Modal -->
+<div id="moodSnapModal" class="fixed inset-0 modal-backdrop hidden flex items-center justify-center z-50">
+    <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-md w-full mx-4 border border-white border-opacity-20">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-white flex items-center space-x-2">
+                <span>📸</span>
+                <span>MoodSnap</span>
+            </h2>
+            <button onclick="closeMoodSnapModal()" class="text-white text-opacity-70 hover:text-white text-2xl">&times;</button>
+        </div>
+        
+        <div class="space-y-6">
+            <!-- Camera Preview Area -->
+            <div class="relative bg-black bg-opacity-30 rounded-2xl h-64 flex items-center justify-center border-2 border-dashed border-white border-opacity-30">
+                <div class="text-center">
+                    <div class="text-4xl mb-2">📷</div>
+                    <p class="text-white text-opacity-70">Tap to capture your mood</p>
+                    <button onclick="capturePhoto()" class="mt-4 bg-white bg-opacity-20 text-white px-6 py-2 rounded-full hover:bg-opacity-30 transition-all">
+                        Take Photo
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Auto-Style Options -->
+            <div>
+                <label class="block text-sm font-medium text-white mb-3">Auto-style with mood</label>
+                <div class="grid grid-cols-3 gap-3">
+                    <button type="button" onclick="selectSnapMood('euphoric', '😍')" class="snap-mood-btn euphoric p-3 rounded-xl text-center transition-all">
+                        <div class="text-xl mb-1">😍</div>
+                        <div class="text-xs text-white">Euphoric</div>
+                    </button>
+                    <button type="button" onclick="selectSnapMood('chill', '😎')" class="snap-mood-btn chill p-3 rounded-xl text-center transition-all">
+                        <div class="text-xl mb-1">😎</div>
+                        <div class="text-xs text-white">Chill</div>
+                    </button>
+                    <button type="button" onclick="selectSnapMood('bold', '🔥')" class="snap-mood-btn bold p-3 rounded-xl text-center transition-all">
+                        <div class="text-xl mb-1">🔥</div>
+                        <div class="text-xs text-white">Bold</div>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex space-x-3 pt-4">
+                <button type="button" onclick="closeMoodSnapModal()" class="flex-1 px-6 py-3 bg-white bg-opacity-10 text-white rounded-xl hover:bg-opacity-20 transition-all backdrop-filter backdrop-blur-sm">
+                    Cancel
+                </button>
+                <button onclick="processMoodSnap()" class="flex-1 px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-xl hover:from-blue-600 hover:to-cyan-700 transition-all font-medium">
+                    Create MoodSnap
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add Vibe Modal -->
+<div id="vibeModal" class="fixed inset-0 modal-backdrop hidden flex items-center justify-center z-50">
+    <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl p-8 max-w-md w-full mx-4 border border-white border-opacity-20">
+        <div class="flex items-center justify-between mb-6">
+            <h2 class="text-2xl font-bold text-white">Share Your Vibe</h2>
+            <button onclick="closeVibeModal()" class="text-white text-opacity-70 hover:text-white text-2xl">&times;</button>
+        </div>
+        
+        <form onsubmit="addVibe(event)" class="space-y-6">
+            <div>
+                <label class="block text-sm font-medium text-white mb-3">What's your mood?</label>
+                <div class="grid grid-cols-3 gap-3 mb-4">
+                    <button type="button" onclick="selectMood('crushed-it', '💪', 'Crushed it')" class="mood-btn crushed-it p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">💪</div>
+                        <div class="text-xs text-white">Crushed it</div>
+                    </button>
+                    <button type="button" onclick="selectMood('soft-joy', '🌸', 'Soft joy')" class="mood-btn soft-joy p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🌸</div>
+                        <div class="text-xs text-white">Soft joy</div>
+                    </button>
+                    <button type="button" onclick="selectMood('blur-day', '🌫️', 'Blur day')" class="mood-btn blur-day p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🌫️</div>
+                        <div class="text-xs text-white">Blur day</div>
+                    </button>
+                    <button type="button" onclick="selectMood('electric-feels', '⚡', 'Electric feels')" class="mood-btn electric-feels p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">⚡</div>
+                        <div class="text-xs text-white">Electric feels</div>
+                    </button>
+                    <button type="button" onclick="selectMood('golden-hour', '🌅', 'Golden hour')" class="mood-btn golden-hour p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🌅</div>
+                        <div class="text-xs text-white">Golden hour</div>
+                    </button>
+                    <button type="button" onclick="selectMood('midnight-thoughts', '🌙', 'Midnight thoughts')" class="mood-btn midnight-thoughts p-4 rounded-2xl text-center transition-all">
+                        <div class="text-2xl mb-1">🌙</div>
+                        <div class="text-xs text-white">Midnight thoughts</div>
+                    </button>
+                </div>
+                
+                <!-- Custom Mood Tag Input -->
+                <div class="border-t border-white border-opacity-20 pt-4">
+                    <label class="block text-sm font-medium text-white mb-2">Or create your own mood tag</label>
+                    <div class="flex space-x-2">
+                        <input type="text" id="customMoodTag" placeholder="e.g. Chaos energy, Dreamy vibes..." class="flex-1 px-3 py-2 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-lg text-white placeholder-white placeholder-opacity-50 text-sm">
+                        <button type="button" onclick="createCustomMood()" class="px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg text-sm hover:from-purple-600 hover:to-pink-600 transition-all">
+                            Create
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-white mb-2">Title</label>
+                <input type="text" id="vibeTitle" required class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white placeholder-white placeholder-opacity-50 focus:ring-2 focus:ring-pink-400 focus:border-transparent backdrop-filter backdrop-blur-sm">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-white mb-2">Vibe Lane</label>
+                <select id="vibeLane" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white focus:ring-2 focus:ring-pink-400 focus:border-transparent backdrop-filter backdrop-blur-sm">
+                    <option value="cinematic">🎬 Cinematic</option>
+                    <option value="surreal">🌀 Surreal</option>
+                    <option value="dance">💃 Dance</option>
+                </select>
+            </div>
+            
+            <div>
+                <label class="block text-sm font-medium text-white mb-2">Share your moment</label>
+                <textarea id="vibeDescription" required rows="3" class="w-full px-4 py-3 bg-white bg-opacity-10 border border-white border-opacity-20 rounded-xl text-white placeholder-white placeholder-opacity-50 focus:ring-2 focus:ring-pink-400 focus:border-transparent backdrop-filter backdrop-blur-sm"></textarea>
+            </div>
+            
+            <div class="flex space-x-3 pt-4">
+                <button type="button" onclick="closeVibeModal()" class="flex-1 px-6 py-3 bg-white bg-opacity-10 text-white rounded-xl hover:bg-opacity-20 transition-all backdrop-filter backdrop-blur-sm">
+                    Cancel
+                </button>
+                <button type="submit" class="flex-1 px-6 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-xl hover:from-pink-600 hover:to-purple-700 transition-all font-medium">
+                    Share Vibe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let selectedMood = null;
+    let selectedEmoji = null;
+    let selectedMoodDisplay = null;
+    let remixMood = null;
+    let remixEmoji = null;
+    let originalVibeTitle = null;
+    let snapMood = null;
+    let snapEmoji = null;
+    let currentLaneIndex = 0;
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    // Modal functions
+    function openVibeModal() {
+        document.getElementById('vibeModal').classList.remove('hidden');
+    }
+    
+    function openMoodSnapModal() {
+        document.getElementById('moodSnapModal').classList.remove('hidden');
+    }
+    
+    function closeMoodSnapModal() {
+        document.getElementById('moodSnapModal').classList.add('hidden');
+        snapMood = null;
+        snapEmoji = null;
+        // Reset snap mood buttons
+        document.querySelectorAll('.snap-mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+    }
+    
+    function selectSnapMood(mood, emoji) {
+        snapMood = mood;
+        snapEmoji = emoji;
+        
+        // Reset all snap mood buttons
+        document.querySelectorAll('.snap-mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+        
+        // Highlight selected mood
+        event.target.closest('.snap-mood-btn').style.transform = 'scale(1.1)';
+        event.target.closest('.snap-mood-btn').style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.3)';
+    }
+    
+    function capturePhoto() {
+        showNotification('📸 Photo captured! Select a mood to auto-style it.');
+    }
+    
+    function processMoodSnap() {
+        if (!snapMood || !snapEmoji) {
+            showNotification('Please select a mood for auto-styling! 😊');
+            return;
+        }
+        
+        const moodSnapCard = document.createElement('div');
+        moodSnapCard.className = 'vibe-card rounded-3xl p-6 liquid-transition';
+        moodSnapCard.dataset.vibe = 'all';
+        moodSnapCard.innerHTML = `
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="${snapMood} w-16 h-16 rounded-full flex items-center justify-center text-3xl floating-emoji">
+                        ${snapEmoji}
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">MoodSnap Moment</h3>
+                        <p class="text-white text-opacity-70">Just now • Auto-styled</p>
+                    </div>
+                </div>
+                <div class="music-visualizer text-cyan-300">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="mb-4 bg-gradient-to-r from-${snapMood === 'euphoric' ? 'pink' : snapMood === 'chill' ? 'blue' : 'orange'}-400 to-${snapMood === 'euphoric' ? 'purple' : snapMood === 'chill' ? 'cyan' : 'red'}-500 rounded-2xl h-32 flex items-center justify-center">
+                <div class="text-white text-4xl">📸✨</div>
+            </div>
+            <p class="text-white text-opacity-90 mb-4">Captured this ${snapMood} moment with MoodSnap! The auto-styling perfectly matched my vibe 🎨</p>
+            <div class="flex items-center justify-between">
+                <div class="flex space-x-2">
+                    <span class="px-3 py-1 bg-cyan-500 bg-opacity-30 rounded-full text-white text-sm">📸 MoodSnap</span>
+                    <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">${snapMood.charAt(0).toUpperCase() + snapMood.slice(1)}</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="likeVibe(this)" class="text-white text-opacity-70 hover:text-pink-300 transition-colors">
+                        <span class="heart">🤍</span> <span class="like-count">0</span>
+                    </button>
+                    <button onclick="remixVibe('MoodSnap Moment', '${snapMood}', '${snapEmoji}')" class="text-white text-opacity-70 hover:text-purple-300 transition-colors">
+                        🔄 Remix
+                    </button>
+                    <button onclick="shareVibe('MoodSnap Moment')" class="text-white text-opacity-70 hover:text-blue-300 transition-colors">
+                        📤
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Add to timeline
+        const timeline = document.getElementById('vibeTimeline');
+        timeline.insertBefore(moodSnapCard, timeline.firstChild);
+        
+        closeMoodSnapModal();
+        scrollToTop();
+        showNotification('📸 MoodSnap created with auto-styling! ✨');
+    }
+    
+    function closeVibeModal() {
+        document.getElementById('vibeModal').classList.add('hidden');
+        document.querySelector('form').reset();
+        selectedMood = null;
+        selectedEmoji = null;
+        // Reset mood buttons
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+    }
+    
+    // Remix modal functions
+    function remixVibe(title, mood, emoji) {
+        originalVibeTitle = title;
+        document.getElementById('originalTitle').textContent = title;
+        document.getElementById('originalEmoji').textContent = emoji;
+        document.getElementById('remixModal').classList.remove('hidden');
+    }
+    
+    function closeRemixModal() {
+        document.getElementById('remixModal').classList.add('hidden');
+        document.querySelector('#remixModal form').reset();
+        remixMood = null;
+        remixEmoji = null;
+        // Reset remix mood buttons
+        document.querySelectorAll('.remix-mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+    }
+    
+    function selectRemixMood(mood, emoji) {
+        remixMood = mood;
+        remixEmoji = emoji;
+        
+        // Reset all remix mood buttons
+        document.querySelectorAll('.remix-mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+        
+        // Highlight selected mood
+        event.target.closest('.remix-mood-btn').style.transform = 'scale(1.1)';
+        event.target.closest('.remix-mood-btn').style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.3)';
+    }
+    
+    function submitRemix(event) {
+        event.preventDefault();
+        
+        if (!remixMood || !remixEmoji) {
+            showNotification('Please select a remix mood first! 😊');
+            return;
+        }
+        
+        const title = document.getElementById('remixTitle').value;
+        const description = document.getElementById('remixDescription').value;
+        
+        const vibeCard = document.createElement('div');
+        vibeCard.className = 'vibe-card rounded-3xl p-6 liquid-transition';
+        vibeCard.dataset.vibe = 'remixes';
+        vibeCard.innerHTML = `
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="${remixMood} w-16 h-16 rounded-full flex items-center justify-center text-3xl floating-emoji">
+                        ${remixEmoji}
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">${title}</h3>
+                        <p class="text-white text-opacity-70">Just now • Remix of "${originalVibeTitle}"</p>
+                    </div>
+                </div>
+                <div class="music-visualizer text-purple-300">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <p class="text-white text-opacity-90 mb-4">${description}</p>
+            <div class="flex items-center justify-between">
+                <div class="flex space-x-2">
+                    <span class="px-3 py-1 bg-purple-500 bg-opacity-30 rounded-full text-white text-sm">🔄 Remix</span>
+                    <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">${remixMood.charAt(0).toUpperCase() + remixMood.slice(1)}</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="likeVibe(this)" class="text-white text-opacity-70 hover:text-pink-300 transition-colors">
+                        <span class="heart">🤍</span> <span class="like-count">0</span>
+                    </button>
+                    <button onclick="remixVibe('${title}', '${remixMood}', '${remixEmoji}')" class="text-white text-opacity-70 hover:text-purple-300 transition-colors">
+                        🔄 Remix
+                    </button>
+                    <button onclick="shareVibe('${title}')" class="text-white text-opacity-70 hover:text-blue-300 transition-colors">
+                        📤
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Add to timeline
+        const timeline = document.getElementById('vibeTimeline');
+        timeline.insertBefore(vibeCard, timeline.firstChild);
+        
+        closeRemixModal();
+        scrollToTop();
+        showNotification('Remix shared! 🔄✨');
+    }
+    
+    // Mood selection with custom mood support
+    function selectMood(mood, emoji, displayName) {
+        selectedMood = mood;
+        selectedEmoji = emoji;
+        selectedMoodDisplay = displayName || mood;
+        
+        // Reset all mood buttons
+        document.querySelectorAll('.mood-btn').forEach(btn => {
+            btn.style.transform = 'scale(1)';
+            btn.style.boxShadow = 'none';
+        });
+        
+        // Highlight selected mood
+        event.target.closest('.mood-btn').style.transform = 'scale(1.1)';
+        event.target.closest('.mood-btn').style.boxShadow = '0 0 20px rgba(255, 255, 255, 0.3)';
+    }
+    
+    // Create custom mood tag
+    function createCustomMood() {
+        const customTag = document.getElementById('customMoodTag').value.trim();
+        if (!customTag) {
+            showNotification('Please enter a custom mood tag! ✨');
+            return;
+        }
+        
+        // Generate emoji based on mood keywords
+        let emoji = '✨';
+        if (customTag.toLowerCase().includes('chaos')) emoji = '🌪️';
+        else if (customTag.toLowerCase().includes('dream')) emoji = '💭';
+        else if (customTag.toLowerCase().includes('energy')) emoji = '⚡';
+        else if (customTag.toLowerCase().includes('peace')) emoji = '🕊️';
+        else if (customTag.toLowerCase().includes('fire')) emoji = '🔥';
+        else if (customTag.toLowerCase().includes('flow')) emoji = '🌊';
+        
+        selectedMood = 'custom-mood';
+        selectedEmoji = emoji;
+        selectedMoodDisplay = customTag;
+        
+        showNotification(`Custom mood "${customTag}" created! ${emoji}`);
+        document.getElementById('customMoodTag').value = '';
+    }
+    
+    // Challenge function with different types
+    function joinChallenge(type = 'glow') {
+        const challenges = {
+            'glow': {
+                title: 'My Glow Check',
+                description: 'Showing my radiant energy for today\'s challenge! ',
+                message: 'Glow challenge joined! ✨'
+            },
+            'creative': {
+                title: 'Unexpressed Feeling',
+                description: 'This is a feeling I\'ve never shared before... ',
+                message: 'Creative challenge joined! 🎨'
+            },
+            'chaos': {
+                title: 'Chaos Energy',
+                description: 'Turning my messy moment into something beautiful ',
+                message: 'Chaos challenge joined! 🌪️'
+            },
+            '3am': {
+                title: 'Midnight thoughts',
+                description: '3AM vulnerability hitting different... ',
+                message: '3AM challenge joined! 🌙'
+            }
+        };
+        
+        const challenge = challenges[type] || challenges['glow'];
+        showNotification(challenge.message);
+        
+        // Auto-open vibe modal with challenge context
+        setTimeout(() => {
+            openVibeModal();
+            document.getElementById('vibeTitle').value = challenge.title;
+            document.getElementById('vibeDescription').value = challenge.description;
+        }, 1000);
+    }
+    
+    // Micro-Reel functionality
+    function playMicroReel(element, moodType) {
+        const reelContainer = element;
+        const originalContent = reelContainer.innerHTML;
+        
+        // Create animated overlay
+        reelContainer.innerHTML = `
+            <div class="bg-gradient-to-br from-black to-gray-800 rounded-2xl h-48 flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 opacity-20 animate-pulse"></div>
+                <div class="relative z-10 text-center">
+                    <div class="text-4xl mb-2 animate-bounce">🎬</div>
+                    <div class="text-white font-bold">Playing Micro-Reel...</div>
+                    <div class="text-white text-opacity-70 text-sm mt-2">3-second memory loop</div>
+                </div>
+                <!-- Animated sparkles -->
+                <div class="absolute top-4 left-4 text-yellow-300 animate-ping">✨</div>
+                <div class="absolute bottom-4 right-4 text-blue-300 animate-ping" style="animation-delay: 0.5s;">💫</div>
+                <div class="absolute top-1/2 right-6 text-pink-300 animate-ping" style="animation-delay: 1s;">⭐</div>
+            </div>
+        `;
+        
+        // Simulate 3-second playback
+        setTimeout(() => {
+            reelContainer.innerHTML = originalContent;
+            showNotification('Micro-Reel complete! ✨ That was a beautiful moment');
+        }, 3000);
+        
+        showNotification('🎬 Playing 3-second memory loop...');
+    }
+    
+    // Join collaboration function
+    function joinCollab(title) {
+        showNotification(`Joined collab chain for "${title}"! 🤝`);
+        
+        // Auto-open vibe modal for collaboration
+        setTimeout(() => {
+            openVibeModal();
+            document.getElementById('vibeTitle').value = `${title} - My Take`;
+            document.getElementById('vibeDescription').value = 'Adding my perspective to this collab chain... ';
+        }, 1000);
+    }
+    
+    // Filter vibes with new community features
+    function filterVibes(filter) {
+        // Update filter buttons
+        document.querySelectorAll('.vibe-filter').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        document.getElementById(`filter-${filter}`).classList.add('active');
+        
+        // Filter vibe cards
+        const vibeCards = document.querySelectorAll('[data-vibe]');
+        vibeCards.forEach(card => {
+            if (filter === 'all' || card.dataset.vibe === filter) {
+                card.style.display = 'block';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            } else {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
+        });
+        
+        // Show specific messages for different filters
+        const filterMessages = {
+            'trending': '🔥 Showing hottest vibes right now!',
+            'moodmesh': '🌐 MoodMesh: Collective vibes from your community',
+            'collab': '🤝 Collab Chains: Creative collaborations in progress',
+            'remixes': '🔄 MoodChain: Emotional evolution threads'
+        };
+        
+        if (filterMessages[filter]) {
+            showNotification(filterMessages[filter]);
+        }
+    }
+    
+    // Add new vibe
+    function addVibe(event) {
+        event.preventDefault();
+        
+        if (!selectedMood || !selectedEmoji) {
+            showNotification('Please select a mood first! 😊');
+            return;
+        }
+        
+        const title = document.getElementById('vibeTitle').value;
+        const lane = document.getElementById('vibeLane').value;
+        const description = document.getElementById('vibeDescription').value;
+        
+        const vibeCard = document.createElement('div');
+        vibeCard.className = 'vibe-card rounded-3xl p-6 liquid-transition';
+        vibeCard.dataset.vibe = lane;
+        vibeCard.innerHTML = `
+            <div class="flex items-start justify-between mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="${selectedMood} w-16 h-16 rounded-full flex items-center justify-center text-3xl floating-emoji">
+                        ${selectedEmoji}
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold text-white">${title}</h3>
+                        <p class="text-white text-opacity-70">Just now</p>
+                    </div>
+                </div>
+                <div class="music-visualizer text-pink-300">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <p class="text-white text-opacity-90 mb-4">${description}</p>
+            <div class="flex items-center justify-between">
+                <div class="flex space-x-2">
+                    <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">${lane.charAt(0).toUpperCase() + lane.slice(1)}</span>
+                    <span class="px-3 py-1 bg-white bg-opacity-20 rounded-full text-white text-sm">${selectedMoodDisplay || selectedMood}</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <button onclick="likeVibe(this)" class="text-white text-opacity-70 hover:text-pink-300 transition-colors">
+                        <span class="heart">🤍</span> <span class="like-count">0</span>
+                    </button>
+                    <button onclick="remixVibe('${title}', '${selectedMood}', '${selectedEmoji}')" class="text-white text-opacity-70 hover:text-purple-300 transition-colors">
+                        🔄 Remix
+                    </button>
+                    <button onclick="shareVibe('${title}')" class="text-white text-opacity-70 hover:text-blue-300 transition-colors">
+                        📤
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Add to timeline
+        const timeline = document.getElementById('vibeTimeline');
+        timeline.insertBefore(vibeCard, timeline.firstChild);
+        
+        closeVibeModal();
+        scrollToTop();
+        showNotification('Vibe shared! ✨');
+    }
+    
+    // Like functionality for snapshots
+    function likeSnapshot(button) {
+        const heart = button.querySelector('.heart');
+        const countSpan = button.querySelector('.like-count');
+        let count = parseInt(countSpan.textContent);
+        
+        if (heart.textContent === '🤍') {
+            heart.textContent = '❤️';
+            count++;
+            button.classList.add('text-pink-300');
+            
+            // Add sparkle effect
+            const sparkle = document.createElement('div');
+            sparkle.textContent = '✨';
+            sparkle.className = 'absolute text-yellow-300 animate-ping pointer-events-none';
+            sparkle.style.left = '50%';
+            sparkle.style.top = '50%';
+            sparkle.style.transform = 'translate(-50%, -50%)';
+            button.style.position = 'relative';
+            button.appendChild(sparkle);
+            
+            setTimeout(() => {
+                if (button.contains(sparkle)) {
+                    button.removeChild(sparkle);
+                }
+            }, 1000);
+        } else {
+            heart.textContent = '🤍';
+            count--;
+            button.classList.remove('text-pink-300');
+        }
+        
+        countSpan.textContent = count;
+    }
+    
+    // Customize snapshot appearance
+    function customizeSnapshot(button, moodType) {
+        const snapshotCard = button.closest('.mood-snapshot');
+        const moodCard = snapshotCard.querySelector('.mood-card');
+        
+        // Cycle through different color schemes for the mood type
+        const colorSchemes = {
+            'high-energy': [
+                'from-orange-400 to-red-500',
+                'from-red-400 to-pink-500',
+                'from-yellow-400 to-orange-500',
+                'from-pink-400 to-red-500'
+            ],
+            'peaceful': [
+                'from-green-400 to-blue-500',
+                'from-blue-400 to-cyan-500',
+                'from-teal-400 to-green-500',
+                'from-cyan-400 to-blue-500'
+            ],
+            'creative': [
+                'from-purple-400 to-pink-500',
+                'from-pink-400 to-purple-500',
+                'from-indigo-400 to-purple-500',
+                'from-purple-400 to-blue-500'
+            ],
+            'melancholy': [
+                'from-indigo-400 to-gray-600',
+                'from-gray-400 to-blue-600',
+                'from-blue-400 to-indigo-600',
+                'from-slate-400 to-gray-600'
+            ],
+            'euphoric': [
+                'from-yellow-400 to-pink-500',
+                'from-pink-400 to-yellow-500',
+                'from-orange-400 to-pink-500',
+                'from-yellow-400 to-orange-500'
+            ]
+        };
+        
+        const schemes = colorSchemes[moodType] || colorSchemes['high-energy'];
+        const currentClasses = moodCard.className;
+        let currentSchemeIndex = 0;
+        
+        // Find current scheme
+        schemes.forEach((scheme, index) => {
+            if (currentClasses.includes(scheme)) {
+                currentSchemeIndex = index;
+            }
+        });
+        
+        // Apply next scheme
+        const nextIndex = (currentSchemeIndex + 1) % schemes.length;
+        const newScheme = schemes[nextIndex];
+        
+        // Remove old gradient classes and add new ones
+        schemes.forEach(scheme => {
+            moodCard.classList.remove(...scheme.split(' '));
+        });
+        moodCard.classList.add(...newScheme.split(' '));
+        
+        // Add customization effect
+        moodCard.style.transform = 'scale(1.05)';
+        setTimeout(() => {
+            moodCard.style.transform = '';
+        }, 300);
+        
+        showNotification(`🎨 Snapshot customized! New ${moodType} color scheme applied`);
+    }
+    
+    // Share snapshot
+    function shareSnapshot(title) {
+        if (navigator.share) {
+            navigator.share({
+                title: `${title} - MoodPix Snapshot`,
+                text: `Check out this mood snapshot: ${title}`,
+                url: window.location.href
+            });
+        } else {
+            navigator.clipboard.writeText(`Check out this mood snapshot: ${title} - ${window.location.href}`);
+            showNotification('Snapshot link copied! 📋');
+        }
+    }
+    
+    // Remix snapshot
+    function remixSnapshot(title, mood, emoji) {
+        remixVibe(title, mood, emoji);
+    }
+    
+    // Like functionality for regular vibes (keeping original)
+    function likeVibe(button) {
+        const heart = button.querySelector('.heart');
+        const countSpan = button.querySelector('.like-count');
+        let count = parseInt(countSpan.textContent);
+        
+        if (heart.textContent === '🤍') {
+            heart.textContent = '❤️';
+            count++;
+            button.classList.add('text-pink-300');
+        } else {
+            heart.textContent = '🤍';
+            count--;
+            button.classList.remove('text-pink-300');
+        }
+        
+        countSpan.textContent = count;
+    }
+    
+    // Share functionality
+    function shareVibe(title) {
+        if (navigator.share) {
+            navigator.share({
+                title: `${title} - MoodPix`,
+                text: `Check out this vibe: ${title}`,
+                url: window.location.href
+            });
+        } else {
+            navigator.clipboard.writeText(`Check out this vibe: ${title} - ${window.location.href}`);
+            showNotification('Link copied to clipboard! 📋');
+        }
+    }
+    
+    // Notification system
+    function showNotification(message) {
+        const notification = document.createElement('div');
+        notification.className = 'fixed top-4 right-4 bg-gradient-to-r from-pink-500 to-purple-600 text-white px-6 py-3 rounded-full shadow-lg z-50 transform transition-all duration-300 backdrop-filter backdrop-blur-lg';
+        notification.textContent = message;
+        
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                document.body.removeChild(notification);
+            }, 300);
+        }, 3000);
+    }
+    
+    // Swipe functionality for mood lanes
+    function initSwipeGestures() {
+        const moodLanes = document.getElementById('moodLanes');
+        
+        moodLanes.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+        
+        moodLanes.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+        
+        // Mouse events for desktop
+        moodLanes.addEventListener('mousedown', function(e) {
+            touchStartX = e.screenX;
+            moodLanes.style.cursor = 'grabbing';
+        });
+        
+        moodLanes.addEventListener('mouseup', function(e) {
+            touchEndX = e.screenX;
+            handleSwipe();
+            moodLanes.style.cursor = 'grab';
+        });
+    }
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0 && currentLaneIndex < 2) {
+                // Swipe left - next set
+                currentLaneIndex++;
+            } else if (diff < 0 && currentLaneIndex > 0) {
+                // Swipe right - previous set
+                currentLaneIndex--;
+            }
+            updateLanePosition();
+        }
+    }
+    
+    function updateLanePosition() {
+        const moodLanes = document.getElementById('moodLanes');
+        const translateX = -currentLaneIndex * 33.33; // Each set takes 33.33% width
+        moodLanes.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        document.querySelectorAll('.swipe-dot').forEach((dot, index) => {
+            if (index === currentLaneIndex) {
+                dot.classList.add('bg-white');
+                dot.classList.remove('bg-opacity-30');
+                dot.classList.add('bg-opacity-80');
+            } else {
+                dot.classList.remove('bg-white', 'bg-opacity-80');
+                dot.classList.add('bg-opacity-30');
+            }
+        });
+    }
+
+    // Close modals when clicking outside
+    document.getElementById('vibeModal').addEventListener('click', function(e) {
+        if (e.target === this) closeVibeModal();
+    });
+    
+    document.getElementById('remixModal').addEventListener('click', function(e) {
+        if (e.target === this) closeRemixModal();
+    });
+    
+    document.getElementById('moodSnapModal').addEventListener('click', function(e) {
+        if (e.target === this) closeMoodSnapModal();
+    });
+    
+    // Scroll to top of timeline when adding new vibes
+    function scrollToTop() {
+        const timeline = document.querySelector('.timeline-container');
+        if (timeline) {
+            timeline.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    }
+    
+    // Initialize swipe gestures and dynamic effects
+    document.addEventListener('DOMContentLoaded', function() {
+        initSwipeGestures();
+        updateLanePosition(); // Set initial dot state
+    });
+    
+    // Add some dynamic background changes
+    setInterval(() => {
+        const cards = document.querySelectorAll('.vibe-card');
+        cards.forEach(card => {
+            if (Math.random() > 0.7) {
+                card.style.transform = 'translateY(-2px)';
+                setTimeout(() => {
+                    card.style.transform = 'translateY(0)';
+                }, 200);
+            }
+        });
+    }, 5000);
+</script>
