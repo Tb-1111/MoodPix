@@ -1,8 +1,10 @@
 # 🌈 MoodPix
 
 ![Status: In Development](https://img.shields.io/badge/status-in--development-orange)
-
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
+![Tech: React](https://img.shields.io/badge/tech-react-blue)
+![Made with Love](https://img.shields.io/badge/made%20with-love-red)
+![Contributors](https://img.shields.io/github/contributors/Tb-1111/MoodPix)
 
 **MoodPix** is a modular, emotionally intelligent platform designed to amplify visual storytelling, collective healing, and soulful tech experiences.
 
