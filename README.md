@@ -2,15 +2,7 @@
 
 ![Status: In Development](https://img.shields.io/badge/status-in--development-orange)
 
-## 🌟 Vision
-## 🔧 Features
-## 🚀 Getting Started
-## 📦 Tech Stack
-## 🤝 Collaboration
-## 🗺️ Roadmap
-## 📜 License
-## 📬 Connect
-
+![License: MIT](https://img.shields.io/badge/license-MIT-blue)
 
 **MoodPix** is a modular, emotionally intelligent platform designed to amplify visual storytelling, collective healing, and soulful tech experiences.
 
@@ -75,29 +67,6 @@ Want to co-create or explore a feature?
 Reach out via [LinkedIn](https://www.linkedin.com/in/tiffiany-blakely-8789ab2b5/) or open an issue in this repo.
 
 ---
-
-## 🤝 Contributor Guidelines
-
----
-
-MoodPix is a space for emotionally intelligent tech and soulful storytelling. We welcome contributors who:
-
----
-
-- Respect the emotional and creative integrity of the platform
-- Build with intention, accessibility, and modularity
-- Are open to feedback and collaborative iteration
-
---
-
-### How to Contribute
-1. Fork the repo and clone it locally
-2. Create a new branch: `git checkout -b feature/your-feature-name`
-3. Commit your changes: `git commit -m "Add your message"`
-4. Push to the branch: `git push origin feature/your-feature-name`
-5. Open a pull request and describe your contribution
-
-Let’s build with resonance.
 
 _Crafted with intention by Tiffiany Blakely—Founder, UX Systems Architect, and Creative Technologist._
 
